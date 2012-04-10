@@ -88,7 +88,7 @@ function throwOnGLError(err, funcName, args) {
  * @const
  * @type {string}
  */
-chesterGL.version = '0.2.1';
+chesterGL.version = '0.3';
 
 /**
  * Basic settings for chesterGL
@@ -107,7 +107,7 @@ chesterGL.version = '0.2.1';
  */
 chesterGL.settings = {
 	'useGoogleAnalytics': false,
-	'projection': "3d",
+	'projection': '3d',
 	'webglMode': true,
 	'usesOffscreenBuffer': false,
 	'debugSpanId': 'debug-info'
@@ -1047,6 +1047,13 @@ chesterGL.togglePause = function () {
 	}
 };
 
+/**
+ * @returns {boolean}
+ */
+chesterGL.isPaused = function () {
+	return chesterGL._paused;
+};
+
 // properties
 goog.exportSymbol('chesterGL.version', chesterGL.version);
 goog.exportSymbol('chesterGL.settings', chesterGL.settings);
@@ -1071,5 +1078,6 @@ goog.exportSymbol('chesterGL.setRunningScene', chesterGL.setRunningScene);
 goog.exportSymbol('chesterGL.drawScene', chesterGL.drawScene);
 goog.exportSymbol('chesterGL.run', chesterGL.run);
 goog.exportSymbol('chesterGL.togglePause', chesterGL.togglePause);
+goog.exportSymbol('chesterGL.isPaused', chesterGL.isPaused);
 goog.exportSymbol('chesterGL.addMouseHandler', chesterGL.addMouseHandler);
 goog.exportSymbol('chesterGL.removeMouseHandler', chesterGL.removeMouseHandler);
